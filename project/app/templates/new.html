@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .button {
+            border: none;
+            font-weight: bold;
+            background-color: white;
+            color: black;
+        }
+
+        .button:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            color: black;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .button:active {
+            color: black;
+            font-weight: bold;
+        }
+
+        .border {
+            width: max-content;
+        }
+
+        .border:hover {
+            border: black;
+        }
+
+        .foot {
+            background-color: rgb(236, 236, 236);
+            margin-top: 10em;
+            margin-left: -0.3em;
+            margin-right: -0.3em;
+            padding: 2em;
+        }
+
+        .border-notsharp {
+            border-radius: 0.2em;
+        }
+
+        .title-font {
+            font-size: large;
+            font-weight: bolder;
+        }
+
+        .submit-btn {
+            border-radius: 2em;
+            background-color: black;
+            color: white;
+            width: 6em;
+            height: 4em;
+            font: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{%url 'index'%}" class="button">
+            <h1 style="text-align: center;">Blog</h1>
+        </a>
+        <br>
+    </nav>
+
+    <form action="{%url 'create'%}" method="GET">
+        <div style="margin: 0 5em">
+            <p>
+                <select class="border-notsharp" name='category'>
+                    <option value="1">Django</option>
+                    <option value="2">Python</option>
+                    <option value="3">html/css</option>
+                    <option value="4">Js/Jquery</option>
+                </select>
+            </p>
+            <input type="text" name="title" class="border border-notsharp title-font"
+                style="width:100%;height:2em;"><br>
+            <hr>
+            <textarea name="body" class="border border-notsharp" style="width:100%;height:18em;"></textarea><br><br>
+        </div>
+        <div class="foot">
+            <center><input type="submit" value="완료" class="submit-btn"></center>
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .button {
+            border: none;
+            font-weight: bold;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+        }
+
+        .button:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            color: black;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .button:active {
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="{%url 'index'%}" class="button">
+            <h1 style="text-align: center;">Blog</h1>
+        </a>
+    </nav>
+
+    <div style="margin: 0 5em">
+        <div style="text-decoration:underline;"> 
+            <small>
+            {% if blog.category == 1 %}
+            Django
+            {% elif blog.category == 2 %}
+            Python
+            {% elif blog.category == 3 %}
+            html/css
+            {% elif blog.category == 4 %}
+            Js/Jquery
+            {% endif %}
+        </small>
+        </div>
+        <p style="font-size: XX-large; font-weight:bolder">{{blog.title}}</p>
+        <span>{{blog.date}}</span>
+        <span>
+            <a href="/delete/{{blog.id}}" class="button">
+                <input type="button" value="삭제" class="button">
+            </a>
+        </span>
+        <span>
+            <a href="/update/{{blog.id}}">
+                <input type="button" value="수정" class="button">
+            </a>
+        </span>
+        <hr>
+    </div>
+
+    <div style="margin: 0 5em">
+        <br><br>
+        {{blog.body}}
+        <br>
+    </div>
+
+
+    <br><br>
+
+
+
+</body>
+
+</html>
